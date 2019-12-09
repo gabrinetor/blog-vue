@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <!-- viewport para escalonamento de pixels -->
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>BLOGOF</title>
+    <link rel="icon" type="image/png" href="img/icon.png"/>
+
+    <link rel='stylesheet' href='css/estilo.css'>
+    <link rel='stylesheet' href='metroui/build/css/metro-icons.css'>
+    <link rel='stylesheet' href='metroui/build/css/metro.min.css'>
+
+</head>
+
+<body>
+    <br>
+
+    <!--nav class="sidebar" style="background-color: #000000; opacity: 0.65;">
+            <ul>
+                <li class="title">Items Group 1</li>
+                <li class="active"><a href="#"><i class="icon-home"></i>Dashboard</a></li>
+                <li class="stick bg-red"><a href="#"><i class="icon-cog"></i>Layouts</a></li>
+                <li class="stick bg-yellow">
+                    <a class="dropdown-toggle" href="#"><i class="icon-tree-view"></i>Sub menu</a>
+                    <ul class="dropdown-menu" data-role="dropdown">
+                        <li><a href="">Subitem 1</a></li>
+                        <li><a href="">Subitem 2</a></li>
+                        <li><a href="">Subitem 3</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">Subitem 4</a></li>
+                        <li class="disabled"><a href="">Subitem 4</a></li>
+                    </ul>
+                </li>
+                <li class="stick bg-green"><a href="#">Thread item</a></li>
+                <li class="disabled"><a href="#">Disabled item</a></li>
+         
+                <li class="title">Items Group 2</li>
+                <li><a href="#">Other Item 1</a></li>
+                <li><a href="#">Other item 2</a></li>
+                <li><a href="#">Other item 3</a></li>
+                <li>
+                    <a class="dropdown-toggle" href="#">Sub menu 2</a>
+                    <ul class="dropdown-menu" data-role="dropdown">
+                        <li><a href="">Subitem 1</a></li>
+                        <li><a href="">Subitem 2</a></li>
+                        <li><a href="">Subitem 3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav-->
+
+    <!-- Vue -->
+    <div id="app">
+      <button class="button yellow" v-on:click="OpenForm(true)"><span class="mif-chat-bubble"></span>  Contato</button>
+
+      <div id="dvForm" class="max-width white-transparent">
+        <h1>Contato</h1>
+
+        <div>
+          <div class="form-group">
+            <label>Nome Completo <span class="red-alert">{{error.nome}}</span></label>
+            <input v-model="contact.nome" type="text" placeholder="Seu Nome Completo" data-role="input" data-prepend="<span class='mif-user'></span>"/>
+          </div>
+
+          <div class="form-group">
+            <label>E-mail <span class="red-alert">{{error.email}}</span></label>
+            <input v-model="contact.email" type="email" placeholder="Seu E-mail" data-role="input" data-prepend="<span class='mif-contacts-mail'></span>"/>
+          </div>
+
+          <div class="form-group">
+            <label>Assunto <span class="red-alert">{{error.assunto}}</span></label>
+            <input v-model="contact.assunto" type="text" placeholder="Assunto" data-role="input" data-prepend="<span class='mif-import-contacts'></span>"/>
+          </div>
+
+          <div class="form-group">
+            <label>Descrição <span class="red-alert">{{error.mensagem}}</span></label>
+            <textarea v-model="contact.mensagem" data-role="textarea" data-auto-size="true" data-max-height="200" data-prepend="<span class='mif-chat-bubble'></span>"></textarea>
+          </div>
+          <br>
+          <button class="button alert outline" v-on:click="OpenForm(false)">Fechar</button>
+          <button class="button success outline" v-on:click="Send" :disabled="disabledButton">Enviar</button>
+        <span>{{messageResult}}</span>
+        </div>
+      </div>
+    </div>
+    <!-- Vue -->
+
+    <div id="demotext"> Blog of the Blog</div>
+
+    <script src="js/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script src="metroui/js/metro.min.js" charset="utf-8"></script>
+    <script src="metro-dropdown.js"></script>
+    <script src='main.js'></script>
+
+    <script src="js/vue.js" charset="utf-8"></script>
+    <script src="js/axios.min.js" charset="utf-8"></script>
+    <script src="js/vue-app.js" charset="utf-8"></script>
+</body>
+</html>
